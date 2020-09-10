@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 
 const Index = () => {
   return (
-    <div>
+    <div className="home">
       <Layout>
       <h1>Home page</h1>
       <p>I'm Ibas, a teacher and a Gatsby.js developer</p>

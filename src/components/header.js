@@ -1,40 +1,48 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 // import Footer from "./footer"
+import { IconContext } from "react-icons/lib"
+import * as FaIcons from "react-icons/fa"
+import * as AiIcons from "react-icons/ai"
 
+import { SidebarData } from "./SidebarData"
+
+import "../styles/Navbar.css"
 
 const Header = () => {
-  return (
-    <header>
-      <div>
-        <img
-          src="https://i.imgur.com/A1HGuhG.jpg"
-          alt="Kiran ojha"
-          className="img-thumbnail img-responsive "
-        ></img>
-      </div>
-      <hr />
+  const [sidebar, setSidebar] = useState(false)
 
-      <nav>
-        <ul className="nav nav-pills flex-column flex-sm-column">
-          <li className="flex-sm-fill text-sm-center nav-link ">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="flex-sm-fill text-sm-center nav-link">
-            <Link to="/blog/">Blog</Link>
-          </li>
-          <li className="flex-sm-fill text-sm-center nav-link">
-            <Link to="/contact/">Contact</Link>
-          </li>
-          <li className="flex-sm-fill text-sm-center nav-link">
-            <Link to="/about/">About</Link>
-          </li>
-        </ul>
-      </nav>
-      {/* <div>
-      <Footer />
-      </div> */}
-    </header>
+  const showSidebar = () => setSidebar(!sidebar)
+
+  return (
+    <>
+      <IconContext.Provider value={{ color: "#fff" }}>
+        <div className="navbar">
+          <Link to="#" className="menu-bars">
+            <FaIcons.FaBars onClick={showSidebar} />
+          </Link>
+        </div>
+        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+          <ul className="nav-menu-items">
+            <li className="navbar-toggle">
+              <Link to="#" className="menu-bars">
+                <AiIcons.AiOutlineClose />
+              </Link>
+            </li>
+            {SidebarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
+      </IconContext.Provider>
+    </>
   )
 }
 
