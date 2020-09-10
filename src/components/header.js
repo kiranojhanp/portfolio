@@ -8,7 +8,7 @@ const Header = () => {
         <p>
           <Link to="/">Ibas Majid</Link>
         </p>
-        <p>I teach JavaScript, React, GraphQL and Gatsby</p>
+        <p>My name is kiran ojha</p>
       </div>
       <nav>
         <ul>
