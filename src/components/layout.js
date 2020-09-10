@@ -1,14 +1,23 @@
 import React from "react"
 import Header from "./header"
-import Footer from "./footer"
+// import Footer from "./footer"
+
+import "../styles/style.css"
+import { Container, Row, Col } from "reactstrap"
 
 const Layout = props => {
   return (
-    <div>
-      <Header />
-      {props.children}
-      <Footer />
-    </div>
+    <Container fluid={true}>
+      <Row>
+        <Col xs="3">
+          <Header />
+        </Col>
+        <Col xs="9">{props.children}</Col>
+        {/* <Col>
+          <Footer />
+        </Col> */}
+      </Row>
+    </Container>
   )
 }
 
