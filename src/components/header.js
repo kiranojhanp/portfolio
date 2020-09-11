@@ -1,8 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link } from "gatsby"
 // import Footer from "./footer"
 import { IconContext } from "react-icons/lib"
-import * as FaIcons from "react-icons/fa"
 import * as AiIcons from "react-icons/ai"
 
 import { SidebarData } from "./SidebarData"
@@ -10,23 +9,14 @@ import { SidebarData } from "./SidebarData"
 import "../styles/Navbar.css"
 
 const Header = () => {
-  const [sidebar, setSidebar] = useState(false)
-
-  const showSidebar = () => setSidebar(!sidebar)
-
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
-        <div className="navbar">
-          <Link to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
-        </div>
-        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+        <nav className="nav-menu active">
           <ul className="nav-menu-items">
             <li className="navbar-toggle">
               <Link to="#" className="menu-bars">
-                <AiIcons.AiOutlineClose />
+                <AiIcons.AiFillCode />
               </Link>
             </li>
             {SidebarData.map((item, index) => {

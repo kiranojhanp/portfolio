@@ -12,7 +12,7 @@ const Layout = props => {
         <Col xs="3">
           <Header />
         </Col>
-        <Col xs="9">{props.children}</Col>
+        <Col style={{marginLeft: "18rem"}} xs="9">{props.children}</Col>
         {/* <Col>
           <Footer />
         </Col> */}
