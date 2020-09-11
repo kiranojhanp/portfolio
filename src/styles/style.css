@@ -10,3 +10,9 @@
 .content {
   margin-left: "18rem";
 }
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}

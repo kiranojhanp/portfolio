@@ -6,16 +6,17 @@ import * as AiIcons from "react-icons/ai"
 
 import { SidebarData } from "./SidebarData"
 
-import "../styles/Navbar.css"
+import "../styles/Navbar.scss"
+import headerStyles from "./header.module.scss"
 
 const Header = () => {
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
-        <nav className="nav-menu active">
-          <ul className="nav-menu-items">
-            <li className="navbar-toggle">
-              <Link to="#" className="menu-bars">
+        <nav className={`${headerStyles.navMenu} ${headerStyles.active}`}>
+          <ul className={headerStyles.navMenuItems}>
+            <li className={headerStyles.navbarToggle}>
+              <Link to="#" className={headerStyles.menuIcon}>
                 <AiIcons.AiFillCode />
               </Link>
             </li>
